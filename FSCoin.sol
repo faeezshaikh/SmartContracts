@@ -117,8 +117,10 @@ contract FSCoin is ERC20Interface, Owned, SafeMath {
         name = "FSCoin Token";
         decimals = 18;
         _totalSupply = 100000000000000000000000000;
-        balances[0x3edEe361c7C1e3A5391349b8C6Db98F430E7564b] = _totalSupply;
-        Transfer(address(0), 0x3edEe361c7C1e3A5391349b8C6Db98F430E7564b, _totalSupply);
+        // balances[0x3edEe361c7C1e3A5391349b8C6Db98F430E7564b] = _totalSupply;
+        // Transfer(address(0), 0x3edEe361c7C1e3A5391349b8C6Db98F430E7564b, _totalSupply);
+         balances[owner] = _totalSupply;
+        Transfer(address(0), owner, _totalSupply);
     }
 
 
